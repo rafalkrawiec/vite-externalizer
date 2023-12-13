@@ -2,7 +2,7 @@
     "name": "@plenny/vite-externalizer",
     "description": "Simple plugin to exclude external dependencies from bundling with Vite.",
     "keywords": ["plenny", "vite", "dependency", "external"],
-    "version": "0.1.0",
+    "version": "0.1.1",
     "license": "MIT",
     "homepage": "https://github.com/rafalkrawiec/vite-externalizer",
     "repository": {

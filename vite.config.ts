@@ -10,7 +10,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        externalize: 'src/externalizer.ts',
+        externalizer: 'src/externalizer.ts',
       },
       formats: ['es', 'cjs'],
     },
