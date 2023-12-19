@@ -1,5 +1,5 @@
 import type { Plugin, UserConfig } from 'vite';
-import { join } from 'node:path';
+import { join, normalize } from 'node:path';
 
 /**
  * This plugin externalizes all imports which are not relative imports within
@@ -45,7 +45,7 @@ export const externalizer = (): Plugin => {
 };
 
 function isEntryModule(source: string, entries: string[]) {
-  return entries.includes(source);
+  return entries.includes(normalize(source));
 }
 
 function isRelative(source: string) {
@@ -53,7 +53,7 @@ function isRelative(source: string) {
 }
 
 function isIncluded(source: string) {
-  return source.startsWith(process.cwd());
+  return normalize(source).startsWith(process.cwd());
 }
 
 function resolveEntryPoints(config: UserConfig): string[] {
